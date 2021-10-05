@@ -62,6 +62,7 @@
               </table>
               <div>
                 <%= form_with model:[@book, @comment], local: true do |f| %>
+                <%= render 'layouts/errors', obj: @comment %>
                 <%= f.text_area :comment, class: "col-xs-10",id: "book_comment_comment" %>
                <br> <%= f.submit "送信する" %>
                 <% end %>
