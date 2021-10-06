@@ -1,0 +1,15 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Name</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+    <% users.each do |user| %>
+    <tr>
+     <td><%= attachment_image_tag(user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg") %></td>
+     <td> <%= link_to user.name, user_path(user) %></td>
+     <% end %>
+  </thead>
+</table>
