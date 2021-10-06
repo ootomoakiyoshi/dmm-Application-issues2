@@ -8,16 +8,20 @@
 	  <th>introduction</th>
 	  <th><%= user.introduction %></th>
   </tr>
+  <!--フォロー・フォローワー数リンク-->
   <tr>
     <th>fllows</th>
-    <th>フォロー人数記述</th>
+    <th><%= link_to user.followings.count, followings_path(user.id) %></th>
   </tr>
   <tr>
-      <th>fllowers</th>
-      <th>フォロワー人数記述</th>
+    <th>fllowers</th>
+    <th><%= link_to user.followers.count, followers_path(user.id) %> </th>
   </tr>
+  <!--終わり-->
 </table>
 
 <div class='row'>
+  <% if user.id == current_user.id %>
   <%= link_to '',edit_user_path(user),class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{user.id}" %>
+  <% end %>
 </div>
