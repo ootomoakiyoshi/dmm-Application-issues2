@@ -18,8 +18,10 @@
           </td>
           <td><%= link_to @book.title, book_path(@book) %></td>
            <td><%= @book.body %></td>
-          <!--いいねtd-->
-              <td><%= render 'favorites/favorite_btn', book: @book%></td>
+          <!--いいねtd 非同期-->
+              <td id="favorite_btn_<%= @book.id %>">
+                <%= render 'favorites/favorite_btn', book: @book%>
+                </td>
                <td>コメント数: <%= @book.book_comments.count %></td>
          <!--いいね-->
           <% if @book.user == current_user %>
