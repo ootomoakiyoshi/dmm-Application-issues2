@@ -37,7 +37,7 @@
               <div>
                 <%= form_with model:[@book, @comment], remote: true do |f| %>
                 <%= render 'layouts/errors', obj: @comment %>
-                <%= f.text_area :comment, class: "col-xs-10",id: "book_comment_comment" %>
+                <%= f.text_area :comment, size:"90x5",class: "col-xs-10",id: "book_comment_comment" %>
                <br> <%= f.submit "送信する" %>
                 <% end %>
               </div>
